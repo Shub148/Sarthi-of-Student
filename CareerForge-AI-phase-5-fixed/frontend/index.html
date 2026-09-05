@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SARTHI OF STUDENT</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<svg class="icon-sprite" aria-hidden="true">
+  <symbol id="icon-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="icon-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.9-3.4 3.2-5 7-5s6.1 1.6 7 5"/></symbol>
+  <symbol id="icon-github" viewBox="0 0 24 24"><path d="M9 19c-4 .9-4-2-5.5-2.5M14.5 21v-3.4c0-1 .1-1.4-.5-2.1 3.3-.4 6.7-1.6 6.7-7.2 0-1.6-.6-2.9-1.6-3.9.2-.4.7-1.9-.2-3.8 0 0-1.3-.4-4.2 1.5a14.6 14.6 0 0 0-7.5 0C4.3.2 3 0.6 3 0.6c-.9 1.9-.4 3.4-.2 3.8-1 1-1.6 2.3-1.6 3.9 0 5.6 3.4 6.8 6.7 7.2-.6.5-.6 1.1-.6 2.1V21"/></symbol>
+  <symbol id="icon-file" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v5h4M9 13h6M9 17h6"/></symbol>
+  <symbol id="icon-spark" viewBox="0 0 24 24"><path d="m12 2 1.7 6.3L20 10l-6.3 1.7L12 18l-1.7-6.3L4 10l6.3-1.7z"/><path d="m19 16 .7 2.3L22 19l-2.3.7L19 22l-.7-2.3L16 19l2.3-.7z"/></symbol>
+  <symbol id="icon-edit" viewBox="0 0 24 24"><path d="m4 16-.8 4.8L8 20l11.5-11.5a2.1 2.1 0 0 0-3-3z"/><path d="m14.5 6.5 3 3"/></symbol>
+  <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></symbol>
+</svg>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-mark">C</span><span class="brand-name">CareerForge <em>AI</em></span></div>
+    <div class="workspace-label">WORKSPACE <span>PERSONAL</span></div>
+    <nav aria-label="Main navigation">
+      <button class="nav active" data-page="dashboard" data-title="Dashboard"><svg class="icon"><use href="#icon-grid"/></svg><span>Overview</span></button>
+      <button class="nav" data-page="profile"><svg class="icon"><use href="#icon-user"/></svg><span>Profile Optimizer</span></button>
+      <button class="nav" data-page="github"><svg class="icon"><use href="#icon-github"/></svg><span>GitHub Analyzer</span></button>
+      <button class="nav" data-page="resume"><svg class="icon"><use href="#icon-file"/></svg><span>Resume Analyzer</span></button>
+      <button class="nav" data-page="projects"><svg class="icon"><use href="#icon-spark"/></svg><span>Project Suggestions</span></button>
+      <button class="nav" data-page="builder"><svg class="icon"><use href="#icon-edit"/></svg><span>Resume Builder</span></button>
+    </nav>
+    <div class="side-bottom">
+      <div class="side-note"><span class="status-dot"></span><span><b>Rule-based mode</b><small>AI key not connected</small></span></div>
+      <div class="side-note tagline">Analyze. Improve. Build.<br><strong>Get hired.</strong></div>
+    </div>
+  </aside>
+
+  <main>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">CAREER INTELLIGENCE <span class="topbar-separator">/</span> <span id="pageContext">PERSONAL WORKSPACE</span></p>
+        <h1 id="pageTitle">Overview</h1>
+      </div>
+      <div class="topbar-right"><span class="date-label">Tuesday, September 01, 2026</span><div class="status" id="apiStatus"><span class="status-dot"></span>Checking API…</div></div>
+    </header>
+
+    <section id="dashboard" class="page active">
+      <div class="hero-card">
+        <div>
+          <div class="hero-kicker"><span class="sparkle">✦</span> YOUR CAREER READINESS</div>
+          <h2>Turn your work into <span>career momentum.</span></h2>
+          <p>One focused workspace to understand your signal, close the gaps, and show up stronger for the roles you want.</p>
+          <div class="hero-actions"><button class="primary" data-go="profile">Start profile analysis <svg class="icon"><use href="#icon-arrow"/></svg></button><button class="text-button" data-go="resume">Review resume <svg class="icon"><use href="#icon-arrow"/></svg></button></div>
+        </div>
+        <div class="readiness-ring" aria-label="Career readiness score"><div><span id="overallScore">—</span><small>/10</small><em>READINESS</em></div></div>
+      </div>
+      <div class="grid four">
+        <div class="metric"><div class="metric-top"><span>Profile strength</span><span class="metric-icon purple"><svg class="icon"><use href="#icon-user"/></svg></span></div><b id="dashProfile">—</b><div class="metric-foot"><span>Not analyzed</span><i></i></div></div>
+        <div class="metric"><div class="metric-top"><span>GitHub signal</span><span class="metric-icon green"><svg class="icon"><use href="#icon-github"/></svg></span></div><b id="dashGithub">—</b><div class="metric-foot"><span>Not analyzed</span><i></i></div></div>
+        <div class="metric"><div class="metric-top"><span>Resume score</span><span class="metric-icon orange"><svg class="icon"><use href="#icon-file"/></svg></span></div><b id="dashResume">—</b><div class="metric-foot"><span>Not analyzed</span><i></i></div></div>
+        <div class="metric"><div class="metric-top"><span>Project strength</span><span class="metric-icon blue"><svg class="icon"><use href="#icon-spark"/></svg></span></div><b id="dashProjects">—</b><div class="metric-foot"><span>Ideas waiting</span><i></i></div></div>
+      </div>
+      <div class="dashboard-grid">
+        <div class="card action-card"><div class="card-heading"><div><p class="eyebrow">NEXT BEST MOVES</p><h3>Priority actions</h3></div><span class="heading-note">Top 5</span></div><div id="priorityActions" class="action-list"><p class="muted empty-message">Run an analysis to generate personalized actions.</p></div></div>
+        <div class="card focus-card"><div class="card-heading"><div><p class="eyebrow">YOUR FOCUS</p><h3>Close the biggest gap</h3></div><span class="focus-orb"><svg class="icon"><use href="#icon-spark"/></svg></span></div><div id="weakestArea" class="focus-content"><div class="empty-state"><span class="empty-icon">◎</span><p>Your weakest area will appear here.</p><small>Complete one analysis to get a clear next step.</small></div></div></div>
+      </div>
+      <div class="dashboard-grid bottom-grid">
+        <div class="card progress-card"><div class="card-heading"><div><p class="eyebrow">RESUME WORKFLOW</p><h3>Improvement progress</h3></div><span id="resumeProgressLabel" class="heading-note">0%</span></div><div class="progress-track"><i id="resumeProgressBar"></i></div><div class="progress-stages"><span class="done">Upload</span><span id="progressAnalyze">Analyze</span><span>Improve</span><span>Export</span></div></div>
+        <div class="card steps-card"><div class="card-heading"><div><p class="eyebrow">THE PLAYBOOK</p><h3>How CareerForge works</h3></div></div><div class="steps"><div><b>01</b><span>Analyze your current signal</span><svg class="icon"><use href="#icon-arrow"/></svg></div><div><b>02</b><span>Find the evidence recruiters miss</span><svg class="icon"><use href="#icon-arrow"/></svg></div><div><b>03</b><span>Turn gaps into a stronger story</span><svg class="icon"><use href="#icon-arrow"/></svg></div></div></div>
+      </div>
+    </section>
+
+    <section id="profile" class="page">
+      <div class="card">
+        <div class="section-head"><div><p class="eyebrow">01 / PROFILE</p><h2>Profile Optimizer</h2></div><span class="pill">AI + Rules</span></div>
+        <div class="form-grid">
+          <label>Name<input id="pName" placeholder="Your name"></label>
+          <label>Target role<input id="pRole" placeholder="e.g. Java Backend Developer"></label>
+          <label>Profile URL<input id="pProfileUrl" type="url" placeholder="https://linkedin.com/in/you"></label>
+          <label class="full">Headline<input id="pHeadline" placeholder="Your professional headline"></label>
+          <label class="full">About / Summary<textarea id="pAbout" rows="5" placeholder="Tell recruiters who you are, what you build, and where you're going."></textarea></label>
+          <label>Skills<input id="pSkills" placeholder="Java, Spring Boot, SQL, Git"></label>
+          <label>Education<input id="pEducation" placeholder="B.Tech CSE — University"></label>
+          <label class="full">Experience<textarea id="pExperience" rows="4" placeholder="Internships, work, achievements..."></textarea></label>
+          <label class="full">Projects<textarea id="pProjects" rows="4" placeholder="Projects and technologies..."></textarea></label>
+        </div>
+        <button class="primary" id="analyzeProfile">Analyze Profile</button>
+      </div>
+      <div id="profileResult"><div class="card empty-panel"><span class="empty-icon">✦</span><h3>Your profile signal will appear here</h3><p class="muted">Add the details you want recruiters to see, then run an analysis for a focused score and practical rewrites.</p></div></div>
+    </section>
+
+    <section id="github" class="page">
+      <div class="card">
+        <p class="eyebrow">02 / GITHUB</p><h2>GitHub Analyzer</h2>
+        <p class="muted">See your public work through a technical hiring lens. CareerForge checks repositories, documentation, activity, and role-relevant evidence.</p>
+        <div class="inline-form github-form"><input id="githubUser" placeholder="GitHub username · e.g. octocat"><input id="githubRole" placeholder="Target role · e.g. Java Backend Developer"><button class="primary" id="analyzeGithub">Analyze GitHub</button></div>
+      </div>
+      <div id="githubResult"></div>
+    </section>
+
+    <section id="resume" class="page">
+      <div class="card">
+        <p class="eyebrow">03 / RESUME</p><h2>Resume Analyzer</h2>
+        <p class="muted">Upload PDF, DOCX, or TXT. CareerForge extracts the text on the backend, keeps your original safe, and compares it with the role you want.</p>
+        <div class="resume-upload-grid">
+          <label class="upload-field">Resume file
+            <input type="file" id="resumeFile" accept=".pdf,.docx,.txt">
+            <small>PDF, DOCX, or TXT · max 8 MB</small>
+          </label>
+          <label>Target job role
+            <input id="resumeRole" placeholder="e.g. Java Backend Developer">
+            <small class="field-hint">Pre-filled from Profile Optimizer when available.</small>
+          </label>
+        </div>
+        <button class="primary" id="analyzeResume">Analyze Resume</button>
+      </div>
+      <div id="resumeResult"></div>
+    </section>
+
+    <section id="projects" class="page">
+      <div class="card">
+        <p class="eyebrow">04 / PROJECT INTELLIGENCE</p><h2>Career Project Intelligence</h2>
+        <p class="muted">Find the next project that makes your profile stronger—not another generic app idea. CareerForge combines the evidence you have already analyzed with your target role and biggest portfolio gap.</p>
+        <div class="form-grid">
+          <label>Target role<input id="projRole" placeholder="e.g. Java Backend Developer"></label>
+          <label>Skills<input id="projSkills" placeholder="Java, SQL, Spring Boot"></label>
+        </div>
+        <div id="projectContextHint" class="project-context-hint">Run Profile, GitHub, or Resume analysis first for a sharper recommendation. You can still generate from the role and skills above.</div>
+        <button class="primary" id="generateProjects">Find My Best Next Project <svg class="icon"><use href="#icon-arrow"/></svg></button>
+      </div>
+      <div id="projectsResult"></div>
+    </section>
+
+    <section id="builder" class="page">
+      <div class="card">
+        <p class="eyebrow">05 / BUILDER</p><h2>Resume Builder</h2>
+        <div class="template-grid">
+          <button class="template selected" data-template="classic"><b>Classic Professional</b><span>ATS-friendly · clean</span></button>
+          <button class="template" data-template="modern"><b>Modern Minimal</b><span>Elegant · compact</span></button>
+          <button class="template" data-template="tech"><b>Software Engineer</b><span>Technical · focused</span></button>
+          <button class="template" data-template="student"><b>Student / Fresher</b><span>Projects-first</span></button>
+          <button class="template" data-template="ats"><b>ATS Focused</b><span>Structured · scannable</span></button>
+        </div>
+        <textarea id="builderText" rows="18" placeholder="Paste your finalized resume text here…"></textarea>
+        <div class="button-row">
+          <button class="primary" id="downloadPdf">Download PDF</button>
+          <button class="secondary" id="downloadDocx">Download DOCX</button>
+        </div>
+      </div>
+      <div class="card preview-card"><h3>Live preview</h3><pre id="resumePreview">Your resume preview will appear here.</pre></div>
+    </section>
+  </main>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
